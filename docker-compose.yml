@@ -133,3 +133,13 @@ services:
     #         - PGADMIN_DEFAULT_PASSWORD=password
     #     depends_on:
     #         - db
+
+# services:
+#   microblogging_back-php:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     volumes:
+#       - .:/var/www
+#     entrypoint: ["/var/www/fix-permissions.sh"]
+#     command: ["php service serve"]
