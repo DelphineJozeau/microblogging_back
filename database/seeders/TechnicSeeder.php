@@ -10,7 +10,9 @@ class TechnicSeeder extends Seeder
 {
     public function run(): void
     {
-        $technics = [
+        $technics =
+    [  
+         [
             'name' => 'oil painting',
         ],
         [
@@ -36,10 +38,11 @@ class TechnicSeeder extends Seeder
         ],
         [
             'name' => 'mixed media',
-        ]
+        ],
+    ]
 
         ;
 
-        Order::insert($technics);
+        Technic::insert($technics);
     }
 }
