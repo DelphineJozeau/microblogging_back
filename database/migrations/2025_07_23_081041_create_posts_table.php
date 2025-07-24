@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('text');
             $table->string('img_url')->nullable();
-            $table->foreignIdFor(\App\Models\User::class);
-            $table->foreignIdFor(\App\Models\Technic::class);
+            $table->foreignIdFor(\App\Models\User::class)->constrained();
+            $table->foreignIdFor(\App\Models\Technic::class)->nullable()->constrained();
             $table->timestamp('created_at');
-            $table->timestamps('updated_at');
         });
     }
 

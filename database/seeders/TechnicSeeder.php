@@ -40,6 +40,7 @@ class TechnicSeeder extends Seeder
             ],
         ];
 
-        Order::insert($technics);
+
+        Technic::insert($technics);
     }
 }
