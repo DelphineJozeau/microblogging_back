@@ -13,4 +13,9 @@ class Technic extends Model
         'name'
 
     ];
+
+     public function posts()
+    {
+        return $this->hasMany(Post::class);
+    } 
 }
