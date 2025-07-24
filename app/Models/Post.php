@@ -12,10 +12,12 @@ class Post extends Model
     protected $table = "posts";
 
     protected $fillable = [
-        // 'user_id', VOIR COMMENT METTRE LA FOREIGN KEY
+        'user_id',// FOREIGN KEY
         'text',
         'img_url',
-        // 'technic_id',//FOREIGN KEY AUSSI
+        'technic_id',//FOREIGN KEY AUSSI => doit aller dans une fonction au dessous
+        'created_at',
+        'updated_at',
     ];
 
     public function user() {
