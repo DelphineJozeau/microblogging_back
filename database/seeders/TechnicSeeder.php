@@ -10,38 +10,36 @@ class TechnicSeeder extends Seeder
 {
     public function run(): void
     {
-        $technics =
-    [  
-         [
-            'name' => 'oil painting',
-        ],
-        [
-            'name' => 'watercolor',
-        ],
-        [
-            'name' => 'sketching',
-        ],
-        [
-            'name' => 'acrylic painting',
-        ],
-        [
-            'name' => 'digital art',
-        ],
-        [
-            'name' => 'calligraphy',
-        ],
-        [
-            'name' => 'charcoal drawing',
-        ],
-        [
-            'name' => 'pastel art',
-        ],
-        [
-            'name' => 'mixed media',
-        ],
-    ]
+        $technics = [
+            [
+                'name' => 'oil painting',
+            ],
+            [
+                'name' => 'watercolor',
+            ],
+            [
+                'name' => 'sketching',
+            ],
+            [
+                'name' => 'acrylic painting',
+            ],
+            [
+                'name' => 'digital art',
+            ],
+            [
+                'name' => 'calligraphy',
+            ],
+            [
+                'name' => 'charcoal drawing',
+            ],
+            [
+                'name' => 'pastel art',
+            ],
+            [
+                'name' => 'mixed media',
+            ],
+        ];
 
-        ;
 
         Technic::insert($technics);
     }
