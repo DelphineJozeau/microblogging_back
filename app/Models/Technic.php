@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Technic extends Model
 {
-    use HasFactory;
+        // use HasFactory;
+
 
     protected $fillable = [
 
