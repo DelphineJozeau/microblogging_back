@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('img_url')->nullable();
             $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->foreignIdFor(\App\Models\Technic::class)->nullable()->constrained();
-            $table->timestamp('created_at');
+            $table->timestamps(); /**Créer à la fois les colonnes created_at et updated_at automatiquement.
+                                    *C’est la convention Laravel. Tous les modèles Eloquent les attendent. **/
         });
     }
 

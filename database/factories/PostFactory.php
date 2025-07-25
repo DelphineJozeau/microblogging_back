@@ -17,8 +17,19 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
+            'user_id'=> function(){
+                return create(\App\User::class)->id;
+            },
             'text' => $faker->text(),
-            //finish this
+            'img_url'=>$faker->randomElement([
+                'POST IMAGE 1',
+                'POST IMAGE 2',
+                'POST IMAGE 3',
+            ]), // FINIR CAR PAS TROUVE DOSSIER AVEC LES IMAGES
+            'technic_id' => function() {
+                return create(\App\Technic::class)->id;
+            },
+            'created_at'=> now(),
         ];
     }
 }
