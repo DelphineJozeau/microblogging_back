@@ -18,10 +18,10 @@ class TechnicSeeder extends Seeder
                 'name' => 'watercolor',
             ],
             [
-                'name' => 'sketching',
+                'name' => 'acrylic painting',
             ],
             [
-                'name' => 'acrylic painting',
+                'name' => 'gouache',
             ],
             [
                 'name' => 'digital art',
@@ -30,10 +30,19 @@ class TechnicSeeder extends Seeder
                 'name' => 'calligraphy',
             ],
             [
+                'name' => 'sketching',
+            ],
+            [
                 'name' => 'charcoal drawing',
             ],
             [
                 'name' => 'pastel art',
+            ],
+            [
+                'name' => 'ballpoint pen',
+            ],
+            [
+                'name' => 'pencil',
             ],
             [
                 'name' => 'mixed media',
