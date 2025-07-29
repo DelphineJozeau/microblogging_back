@@ -13,8 +13,8 @@ use App\Http\Controllers\TechnicController;
 
 Route::post('/login', [LogController::class, 'login']);
 
-// Route::post('/logout', [LogController::class, 'logout'])
-//     ->middleware('auth:sanctum');
+Route::post('/logout', [LogController::class, 'logout'])
+    ->middleware('auth:sanctum');
 
 // Route::get('/users', [UserController::class, 'checkUser'])
 //     ->middleware('auth:sanctum');
