@@ -9,34 +9,43 @@ use App\Models\User;
 
 
 class PostsController extends Controller {
+
+    
+
         public function getPosts(Request $request) {
         // Get all posts associated with the request
-        $posts = Post::all();
+        $posts = Post::with('user', 'technic')->get();
         return $posts;
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        $user = auth()->user();
+
         // Validation des données
-        $validated = $request->validate([
+        $validated = $request->validate( [
             'user_id' => 'required|exists:users,id',
-            'technic_id' => 'required|exists:technics,id',
+            'technic_id' => 'nullable|exists:technics,id',
             'text' => 'required|string|max:255',
             'img_url' => 'string',
         ]);
 
         // Création du post
-        $post = Post::create($validated);
-        
+        $post = Post::create([
+            'user_id'=>$user->id,
+            'name'=>$user->name,
+            'text'=> $validated[
+                'text'],
+        ]);
+
         // Retourne une réponse JSON
-        return response()
-        ->json([
+        return response()->json([
             'message' => 'Post créé avec succès',
-            'data' => $post
-        ], 201)
-        ->header('Access-Control-Allow-Origin', 'http://localhost:5174')
-        ->header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
-        ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+            'data' =>[
+                'name' => $user->name,
+                'text' => $post->text,
+                'img_url' => $post->img_url,
+            ] 
+        ], 201);
     }
         
 }
