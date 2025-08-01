@@ -26,4 +26,4 @@ Route::get('/post', [PostsController::class, 'getPosts']);
 Route::get('/user', [UserController::class, 'getUsers'])
     ->middleware('auth:sanctum');
 
-Route::post('/post', [PostsController::class, 'store']);
+Route::post('/post', [PostsController::class, 'store'])->middleware('auth:sanctum');
